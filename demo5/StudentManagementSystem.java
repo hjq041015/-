@@ -10,7 +10,8 @@ public class StudentManagementSystem {
 
     public static void main(String[] args) {
         initializeStudents();
-        while (true) {
+        boolean keepRunning = true;
+        while (keepRunning) {
             System.out.println("欢迎来的简易版学生管理系统");
             System.out.println("1:添加学生");
             System.out.println("2:删除学生");
@@ -45,7 +46,14 @@ public class StudentManagementSystem {
 
             }
 
-
+        if (keepRunning) {
+            System.out.println("是否继续进行操作:  (y/n)");
+            String continueChoice = scanner.next();
+            if ( !continueChoice.equalsIgnoreCase("y")) {
+                keepRunning = false;
+                System.out.println("退出程序");
+            }
+        }
         }
 
 
